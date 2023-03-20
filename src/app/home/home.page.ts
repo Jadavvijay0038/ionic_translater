@@ -1,5 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { ApiEndpointService } from '../provider/api-endpoint.service';
+import * as iso6391 from 'iso-639-1';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,11 @@ import { ApiEndpointService } from '../provider/api-endpoint.service';
 })
 export class HomePage implements AfterViewInit {
   langobj: any;
+  languageOptions:any = {}
 
   constructor(private _ApiService: ApiEndpointService) { }
   ngAfterViewInit(): void {
-    this._ApiService.getAllLanguage().subscribe(Response=>{
-      this.langobj = Response;
-    })
+   this.languageOptions = this._ApiService.getLanName()
   }
+  
 }

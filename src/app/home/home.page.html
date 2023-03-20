@@ -10,8 +10,8 @@
   <ion-list>
     <ion-item>
       <ion-select placeholder="Select Language Code">
-        <div *ngFor="let item of langobj">
-          <ion-select-option value="{{item.language}}">{{item.language}}</ion-select-option>
+        <div *ngFor="let item of languageOptions | keyvalue">
+          <ion-select-option >{{item.key}}</ion-select-option>
         </div>
       </ion-select>
     </ion-item>

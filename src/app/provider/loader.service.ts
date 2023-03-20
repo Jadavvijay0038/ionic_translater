@@ -11,7 +11,7 @@ export class LoaderService {
 
   async show() {
     const loading = await this.loadingController.create({
-      message: 'Loading...',
+      message: 'Please Wait...',
       spinner: 'circles',
     });
 
