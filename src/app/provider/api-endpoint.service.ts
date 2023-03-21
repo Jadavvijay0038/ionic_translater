@@ -19,12 +19,4 @@ export class ApiEndpointService {
       map(response => (response as any).data.languages)
     );
   }
-
-  getLanName(): { [key: string]: string } {
-    return this.langobj?.reduce((obj, element) => {
-      const name = iso6391.default.getName(element.language);
-      obj[name] = element.language;
-      return obj;
-    }, {});
-  }
 }
